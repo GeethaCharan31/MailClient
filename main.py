@@ -72,26 +72,17 @@ pswdEntry.grid(row=4, column=2, pady=7)
 letsGoButton.grid(row=5, column=2)
 
 
-# button functions-Frame2
-def f1():
-    showFrame(frame3)
-
-
-def f2():
-    showFrame(frame4)
-
-
-def f3():
-    showFrame(frame5)
-
 
 # Buttons And Labels-Frame2
 photo1 = PhotoImage(file="images/voice.png")
 photo2 = PhotoImage(file="images/typing.png")
 photo3 = PhotoImage(file="images/inbox.png")
-imgbutton1 = Button(frame2, text="Send Mail Through Voice Commands", image=photo1, compound=TOP, command=f1)
-imgbutton2 = Button(frame2, text="Send General Mail", image=photo2, compound=TOP, command=f2)
-imgbutton3 = Button(frame2, text="Check Inbox", image=photo3, compound=TOP, command=f3)
+imgbutton1 = Button(frame2, text="Send Mail Through Voice Commands",
+                    image=photo1, compound=TOP, command=lambda:showFrame(frame3))
+imgbutton2 = Button(frame2, text="Send General Mail",
+                    image=photo2, compound=TOP, command=lambda:showFrame(frame4))
+imgbutton3 = Button(frame2, text="Check Inbox",
+                    image=photo3, compound=TOP, command=lambda:showFrame(frame5))
 emptyLabel = Label(frame2, text="   ", font=('Calibri', 20))
 
 # show on Frame2
