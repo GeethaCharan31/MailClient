@@ -3,14 +3,13 @@ from email.message import EmailMessage
 from tkinter import messagebox
 import speech_recognition as sr
 
-
-listener=sr.Recognizer()
+listener = sr.Recognizer()
 
 try:
-    with sr.Microphone() as source:
+    with sr.Microphone() as mic:
         print("Listening..")
-        voice=listener.listen(source)
-        data=listener.recognize_google(voice)
+        voice = listener.listen(mic)
+        data = listener.recognize_google(voice)
         print(data)
         print("Done")
 except:
@@ -45,4 +44,3 @@ def sendmail(mailId, password, sendTo, subject, message):
     except:
         messagebox.showinfo("Error", "Email couldn't be sent")
     # server.sendmail(mail, sendTo,message)
-
