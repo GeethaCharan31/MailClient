@@ -1,4 +1,3 @@
-import smtplib
 from tkinter import *
 from tkinter import messagebox
 from tkinter import PhotoImage
@@ -51,14 +50,14 @@ password = ""
 
 
 def letsGo():
-    global mailId,password
-    mailId= mailEntry.get()
+    global mailId, password
+    mailId = mailEntry.get()
     password = pswdEntry.get()
     if mailId == "" or password == "":
-        messagebox.showinfo("Error", "Please Enter the details")
+        messagebox.showinfo("Error", "Entry Fields are empty")
+    elif not mail.login(mailId, password):
+        messagebox.showinfo("Error", "Please Enter Valid Login details")
     else:
-        tempLabel = Label(frame1, text=mailId)
-        tempLabel.grid(row=5, column=1)
         showFrame(frame2)
 
 
@@ -100,12 +99,11 @@ imgbutton3.grid(row=3, column=3, padx=4)
 
 # frame4 functions
 def send():
-    print(mailId)
-    print(password)
     sendTo = entryTo.get()
     subject = entrySub.get()
     message = textMes.get(1.0, "end-1c")
     mail.sendmail(mailId, password, sendTo, subject, message)
+
 
 # Frame4
 labelTo = Label(frame4, text="  To : ", font=sm_font)
