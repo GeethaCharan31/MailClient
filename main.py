@@ -17,7 +17,7 @@ frame1 = Frame(root)  # login frame
 frame2 = Frame(root)  # choose options
 frame3 = Frame(root, bg="black")  # voice mail
 frame4 = Frame(root)  # send mail
-frame5 = Frame(root, bg="red")  # check inbox
+frame5 = Frame(root, bg="red")  # check inboxpyth
 
 for frame in (frame1, frame2, frame3, frame4, frame5):
     frame.grid(row=0, sticky="nsew")
